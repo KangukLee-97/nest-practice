@@ -31,4 +31,16 @@ export class BoardsService {
   deleteBoardById(id: string): void {
     this.boards = this.boards.filter((board) => board.id !== id);
   }
+
+  updateBoardStatus(id: string): Board {
+    const board = this.getBoardById(id);
+
+    if (board.status === 'PUBLIC') {
+      board.status = BoardStatus.PRIVATE;
+    } else {
+      board.status = BoardStatus.PUBLIC;
+    }
+
+    return board;
+  }
 }
