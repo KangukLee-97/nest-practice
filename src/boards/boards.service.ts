@@ -18,6 +18,7 @@ export class BoardsService {
       status: BoardStatus.PUBLIC, // 가본으로는 public
     };
 
-    this.boards.push(board);
+    this.boards.push(board); // 새로운 게시물을 boards 배열에 추가
+    return board;
   }
 }
