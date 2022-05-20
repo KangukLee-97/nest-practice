@@ -23,4 +23,12 @@ export class BoardsService {
     this.boards.push(board); // 새로운 게시물을 boards 배열에 추가
     return board;
   }
+
+  getBoardById(id: string): Board {
+    return this.boards.find((board) => board.id === id);
+  }
+
+  deleteBoardById(id: string): void {
+    this.boards = this.boards.filter((board) => board.id !== id);
+  }
 }
