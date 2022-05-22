@@ -34,6 +34,7 @@ export class BoardsController {
   }
 
   // 특정 ID값에 맞는 게시물 삭제하기 handler
+  // 꼭 위에 @nest/common에 delete 추가해줄 것!
   @Delete('/:id')
   deleteBoardById(@Param('id') id: string): void {
     this.boardsService.deleteBoardById(id);
