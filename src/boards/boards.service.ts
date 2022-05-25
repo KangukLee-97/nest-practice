@@ -38,15 +38,19 @@ export class BoardsService {
     this.boards = this.boards.filter((board) => board.id !== found.id);
   }
 
-  updateBoardStatus(id: string): Board {
+  updateBoardStatus(id: string, status: BoardStatus): Board {
+    // const board = this.getBoardById(id);
+
+    // if (board.status === 'PUBLIC') {
+    //   board.status = BoardStatus.PRIVATE;
+    // } else {
+    //   board.status = BoardStatus.PUBLIC;
+    // }
+
+    // return board;
+
     const board = this.getBoardById(id);
-
-    if (board.status === 'PUBLIC') {
-      board.status = BoardStatus.PRIVATE;
-    } else {
-      board.status = BoardStatus.PUBLIC;
-    }
-
+    board.status = status;
     return board;
   }
 }
